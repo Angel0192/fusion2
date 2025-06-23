@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fusion2/home.dart';
 import 'package:fusion2/login.dart';
 
 void main(){
