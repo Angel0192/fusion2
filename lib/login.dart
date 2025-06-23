@@ -21,6 +21,7 @@ class loginPage extends StatelessWidget {
           TextField(),
 
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("New Here? Sign Up -"),
               TextButton(onPressed: (){}, child: Text("Click Here"))
