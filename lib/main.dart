@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fusion2/home.dart';
+import 'package:fusion2/login.dart';
 
 void main(){
   runApp(const MainPage());
@@ -13,7 +14,7 @@ class MainPage extends StatelessWidget {
     return const MaterialApp(
       title: "Fusion Dos",
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: loginPage(),
     );
   }
 }

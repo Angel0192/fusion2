@@ -16,41 +16,38 @@ class MessagePage extends StatelessWidget {
             height: 400,
             child: Card(
               elevation: 20,
-              child: Stack(
+              child: Column(
                 children: [
+                  // Header
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Messages", style: TextStyle(fontWeight: FontWeight.bold),),
-                            IconButton(onPressed: () {
-                          Navigator.pop(context);
-                        }, icon: Icon(Icons.cancel),)
-                          ],
+                        const Text(
+                          "Messages",
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                         ),
-            
-                        ListBody(children: [
-                          Msgrow(),
-                          Divider(),
-                          Msgrow(),
-                          Msgrow(),
-                          Divider(),
-                          Msgrow(),
-                          Msgrow(),
-                          Divider(),
-                          Msgrow()
-                        ],)
-                        
-                        
+                        IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: const Icon(Icons.cancel),
+                        ),
                       ],
                     ),
                   ),
-                  
+
+                  // Scrollable messages
+                  const Divider(height: 1),
+                  Expanded(
+                    child: ListView.separated(
+                      padding: const EdgeInsets.all(8),
+                      itemCount: 10, // Replace with messages.length later
+                      itemBuilder: (context, index) => const Msgrow(),
+                      separatorBuilder: (context, index) => const Divider(),
+                    ),
+                  ),
                 ],
               ),
             ),
